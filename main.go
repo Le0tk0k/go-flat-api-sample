@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
-
 func main() {
-	fmt.Println("Hello, World")
+	app := &app{}
+	app.init()
+	app.run(":8080")
 }
