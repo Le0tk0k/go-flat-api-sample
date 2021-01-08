@@ -30,7 +30,7 @@ func (a *app) getUser(w http.ResponseWriter, r *http.Request) {
 	respondWithJson(w, http.StatusOK, u)
 }
 
-func (a *app) getUsers(w http.ResponseWriter, r *http.Request) {
+func (a *app) getUsers(w http.ResponseWriter, _ *http.Request) {
 	users, err := findAll(a.db)
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, err.Error())
