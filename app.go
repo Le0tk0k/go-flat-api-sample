@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/gorilla/mux"
@@ -44,6 +45,8 @@ func newDb() (*sql.DB, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to open mysql: %w", err)
 	}
+
+	time.Sleep(time.Second * 30)
 
 	if err := db.Ping(); err != nil {
 		return nil, fmt.Errorf("failed to ping: %w", err)
