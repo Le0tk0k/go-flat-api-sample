@@ -54,7 +54,7 @@ func (a *app) createUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	respondWithJson(w, http.StatusCreated, u)
+	respondWithJson(w, http.StatusCreated, map[string]string{"result": "Successfully created"})
 }
 
 func (a *app) updateUser(w http.ResponseWriter, r *http.Request) {
