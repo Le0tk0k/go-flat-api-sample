@@ -1,7 +1,7 @@
 package main
 
 func main() {
-	app := &app{}
-	app.init()
-	app.run(":8080")
+	a := &app{}
+	a.init()
+	a.run(":8080")
 }
