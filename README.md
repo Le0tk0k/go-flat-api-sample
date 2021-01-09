@@ -29,5 +29,5 @@ a.router.HandleFunc("/posts/{id}", a.deletePost).Methods("DELETE")
 
 ## reference
 
-https://semaphoreci.com/community/tutorials/building-and-testing-a-rest-api-in-go-with-gorilla-mux-and-postgresql
-https://github.com/mingrammer/go-todo-rest-api-example
+- https://semaphoreci.com/community/tutorials/building-and-testing-a-rest-api-in-go-with-gorilla-mux-and-postgresql  
+- https://github.com/mingrammer/go-todo-rest-api-example
