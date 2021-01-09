@@ -32,7 +32,7 @@ func (a *app) getUser(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *app) getUsers(w http.ResponseWriter, _ *http.Request) {
-	users, err := findAll(a.db)
+	users, err := findAllUser(a.db)
 	if err != nil {
 		respondWithError(w, http.StatusInternalServerError, err.Error())
 		return

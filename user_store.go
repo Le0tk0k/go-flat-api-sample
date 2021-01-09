@@ -16,7 +16,7 @@ func (u *user) findByID(db *sql.DB) error {
 	return db.QueryRow("SELECT id, name FROM users WHERE id = ?", u.ID).Scan(&u.ID, &u.Name)
 }
 
-func findAll(db *sql.DB) ([]user, error) {
+func findAllUser(db *sql.DB) ([]user, error) {
 	rows, err := db.Query("SELECT id, name FROM users")
 	if err != nil {
 		return nil, err
