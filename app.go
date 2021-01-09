@@ -34,6 +34,12 @@ func (a *app) initRoutes() {
 	a.router.HandleFunc("/users", a.createUser).Methods("POST")
 	a.router.HandleFunc("/users/{id}", a.updateUser).Methods("PUT")
 	a.router.HandleFunc("/users/{id}", a.deleteUser).Methods("DELETE")
+
+	a.router.HandleFunc("/posts/{id}", a.getPost).Methods("GET")
+	a.router.HandleFunc("/posts", a.getPosts).Methods("GET")
+	a.router.HandleFunc("/posts", a.createPost).Methods("POST")
+	a.router.HandleFunc("/posts/{id}", a.updatePost).Methods("PUT")
+	a.router.HandleFunc("/posts/{id}", a.deletePost).Methods("DELETE")
 }
 
 func (a *app) run(addr string) {
