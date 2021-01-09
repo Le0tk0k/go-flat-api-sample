@@ -11,7 +11,7 @@ $ docker-compose up -d --build
 
 ## db scheme
 
-```
+```sql
 CREATE DATABASE IF NOT EXISTS sample;
 USE sample;
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS posts (
 
 **endpoint**
 
-```
+```go
 a.router.HandleFunc("/users/{id}", a.getUser).Methods("GET")
 a.router.HandleFunc("/users", a.getUsers).Methods("GET")
 a.router.HandleFunc("/users", a.createUser).Methods("POST")
