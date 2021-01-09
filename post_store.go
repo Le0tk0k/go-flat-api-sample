@@ -38,8 +38,8 @@ func findAllPosts(db *sql.DB) ([]post, error) {
 	return posts, nil
 }
 
-func (p *post) store(db *sql.DB, authorID int) error {
-	_, err := db.Exec("INSERT INTO posts (title, body, author_id) VALUES (?, ?, ?)", p.Title, p.Body, authorID)
+func (p *post) store(db *sql.DB) error {
+	_, err := db.Exec("INSERT INTO posts (title, body, author_id) VALUES (?, ?, ?)", p.Title, p.Body, p.AuthorID)
 	return err
 }
 

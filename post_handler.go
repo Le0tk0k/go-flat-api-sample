@@ -41,12 +41,6 @@ func (a *app) getPosts(w http.ResponseWriter, _ *http.Request) {
 }
 
 func (a *app) createPost(w http.ResponseWriter, r *http.Request) {
-	params := mux.Vars(r)
-	authorID, err := strconv.Atoi(params["authorID"])
-	if err != nil {
-		respondWithError(w, http.StatusBadRequest, "Invalid author ID")
-	}
-
 	var p post
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&p); err != nil {
@@ -55,7 +49,7 @@ func (a *app) createPost(w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
-	if err := p.store(a.db, authorID); err != nil {
+	if err := p.store(a.db); err != nil {
 		respondWithError(w, http.StatusInternalServerError, err.Error())
 		return
 	}
