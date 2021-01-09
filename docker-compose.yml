@@ -22,5 +22,13 @@ services:
       - ./:/go/src/github.com/Le0tk0k/go-flat-api-sample
     ports:
       - "8080:8080"
+    entrypoint:
+      - dockerize
+      - -timeout
+      - 60s
+      - -wait
+      - tcp://db:3306
     depends_on:
       - db
+    working_dir: /go/src/github.com/Le0tk0k/go-flat-api-sample
+    command: go run .
